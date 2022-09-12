@@ -32,25 +32,6 @@ Vue.use(VueAuthenticate, {
   }
 })
 
-var vueAuth = VueAuthenticate.factory(Vue.prototype.$http, {
-  baseUrl: 'http://localhost:3000', // Your API domain
-
-  providers: {
-    linkedin: {
-      clientId: '86s820eiswev1w',
-      clientSecret: '6DmFiysgRG2jU2lm',
-      redirectUri: 'http://localhost:8080/login', // Your client app URL
-      name: 'linkedin',
-      url: '/api/auth',
-      authorizationEndpoint: 'https://www.linkedin.com/oauth/v2/authorization',
-      requiredUrlParams: ['display', 'scope'],
-      scope: ['r_emailaddress'],
-      state: 'STATE',
-      oauthType: '2.0',
-    }
-  }
-})
-
 new Vue({
   el: '#app',
   router,
